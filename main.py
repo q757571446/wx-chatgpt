@@ -1,7 +1,8 @@
 import openai, re
 from wxchat import WeixinClient, MsgType, Message
 
-openai.api_key_path = "apikey.txt"
+# 填入你的apikey
+openai.api_key = "xxxx"
 
 
 def get_response(text: str) -> [str]:
@@ -10,7 +11,7 @@ def get_response(text: str) -> [str]:
 
 
 if __name__ == '__main__':
-    client = WeixinClient("192.168.0.104")
+    client = WeixinClient()
     profile = client.login()
 
     @client.message(wxid="wxid_.*", msgtype=MsgType.TEXT)
